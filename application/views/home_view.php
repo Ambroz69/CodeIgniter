@@ -1,0 +1,1 @@
+<h1>Hello, testing home view controller.</h1>
