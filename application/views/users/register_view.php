@@ -1,5 +1,5 @@
 
-
+<div class='col-xs-12 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
     <h2>Registration.</h2>
     <?php $attributes = array('ID'=>'register_form', 'class'=> 'form_horizontal'); ?>
 
@@ -106,3 +106,4 @@
     </div>
 
     <?php echo form_close(); ?>
+</div>

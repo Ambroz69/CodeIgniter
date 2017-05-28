@@ -1,7 +1,7 @@
 
 <?php if($this->session->userdata('logged_in')): ?>
-
-    <h2>Logout</h2>
+    <p class="pull-right">
+    <h3>Welcome :)</h3>
     <?php echo form_open('users/logout'); ?>
 
         <p>
@@ -24,11 +24,12 @@
         <?php echo form_submit($data); ?>
 
     <?php echo form_close(); ?>
+    </p>
 
 <?php else: ?>
 
     <h2>Please login to continue.</h2>
-    <?php $attributes = array('ID'=>'login_form', 'class'=> 'form_horizontal'); ?>
+    <?php $attributes = array('ID'=>'create_form', 'class'=> 'form_horizontal'); ?>
 
     <?php if ($this->session->flashdata('errors')): ?>
         <?php echo $this->session->flashdata('errors'); ?>
@@ -64,22 +65,6 @@
 
         <?php echo form_password($data); ?>
     </div>
-
-    <!--
-    <div class="form-group">
-        <?php// echo form_label('Confirm Password:'); ?>
-
-        <?php/*
-        $data = array(
-            'class' => 'form-control',
-            'name' => 'confirm_password',
-            'placeholder' => 'Confirm Password'
-        );  */
-        ?>
-
-        <?php /* echo form_password($data); */?>
-    </div>
-    for matching passwords (also in users.php)!-->
 
     <div class="form-group">
 
