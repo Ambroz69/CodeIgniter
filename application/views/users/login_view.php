@@ -1,12 +1,12 @@
 
 <?php if($this->session->userdata('logged_in')): ?>
-    <p class="pull-right">
+    <p>
     <h3>Welcome :)</h3>
     <?php echo form_open('users/logout'); ?>
 
         <p>
             <?php if ($this->session->userdata('username')): ?>
-                <?php echo "Logged in as ".$this->session->userdata('username')."."; ?>
+                <?php echo "Logged in as <b>".$this->session->userdata('username')."</b>."; ?>
             <?php endif;?>
         </p>
 
@@ -28,7 +28,7 @@
 
 <?php else: ?>
 
-    <h2>Please login to continue.</h2>
+    <h3 class="text-muted">Please login to continue.</h3>
     <?php $attributes = array('ID'=>'create_form', 'class'=> 'form_horizontal'); ?>
 
     <?php if ($this->session->flashdata('errors')): ?>

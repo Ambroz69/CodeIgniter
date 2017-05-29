@@ -9,11 +9,12 @@
 <div class="col-xs-1">
 
 </div>
-<div class='col-xs-3 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
+
+<div class='col-xs-3 container-fluid bg-info img-rounded' align="center" style="border:3px groove cornflowerblue">
     <ul class='btn-group'>
-        <h4 class="text-center">Car management</h4>
-        <td><a href='' class='btn btn-sm btn-block btn-success' role='button'>Add ride</a></td>
-        <td><a href='<?php echo base_url();?>cars/update_car/<?php echo $car_data->ID; ?>' class='btn btn-sm btn-block btn-warning' role='button'>Edit car</a></td>
-        <td><a href='<?php echo base_url();?>cars/delete_car/<?php echo $car_data->ID; ?>' class='btn btn-sm btn-block btn-danger' role='button'>Delete car</a></td>
+        <h4 class="text-center" align="center">Car management</h4>
+  <!--      <td><a href='' class='btn btn-sm btn-block btn-success' role='button'><b>Add ride</b></a></td> !=-->
+        <td><a href='<?php echo base_url();?>cars/update_car/<?php echo $car_data->ID; ?>' class='btn btn-sm btn-block btn-warning' role='button'><b>Edit car</b></a></td>
+        <td><a href='<?php echo base_url();?>cars/delete_car/<?php echo $car_data->ID; ?>' class='btn btn-sm btn-block btn-danger' role='button'><b>Delete car</b></a></td>
     </ul>
 </div>

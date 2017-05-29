@@ -55,9 +55,9 @@
         <?php foreach($drives as $drive): ?>
             <tr>
                 <?php echo "<td>".$drive->ID."</td>"; ?>
-                <?php echo "<td>".$drive->taxi_driver_ID."</td>"; ?>
-                <?php echo "<td>".$drive->car_ID."</a></td>"; ?>
-                <?php echo "<td>".$drive->shift_ID."</td>"; ?>
+                <?php echo "<td><a href='".base_url()."taxi_drivers/display_taxi_driver/". $drive->taxi_driver_ID ."'>" .$drive->taxi_driver_ID . "</a></td>"; ?>
+                <?php echo "<td><a href='".base_url()."cars/display_car/". $drive->car_ID ."'>" .$drive->car_ID . "</a></td>"; ?>
+                <?php echo "<td><a href='".base_url()."shifts/display_shift/". $drive->shift_ID ."'>" .$drive->shift_ID . "</a></td>"; ?>
                 <?php echo "<td>".$drive->from_address."</td>"; ?>
                 <?php echo "<td>".$drive->to_address."</a></td>"; ?>
                 <?php echo "<td>".$drive->distance."</td>"; ?>

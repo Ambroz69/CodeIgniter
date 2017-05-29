@@ -19,5 +19,7 @@
         <?php echo $this->session->flashdata('no_permission'); ?>
     <?php endif; ?>
 </p>
-
-<h1>Hello, testing home view controller.</h1>
+<div class="col-xs-12" align="center">
+    <h2 align="center">Welcome to the <b>Taxi PENGUIN!</b></h2>
+    <img src="http://i.imgur.com/eiigSIZ.jpg" class="img-thumbnail">
+</div>

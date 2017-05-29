@@ -40,7 +40,7 @@
         <?php foreach($shifts as $shift): ?>
             <tr>
                 <?php echo "<td>".$shift->ID."</td>"; ?>
-                <?php echo "<td><a href='".base_url()."shift_details/display_shift_details/". $shift->ID ."'>" .$shift->shift_details_ID . "</a></td>"; ?>
+                <?php echo "<td><a href='".base_url()."shift_details/display_shift_details/". $shift->shift_details_ID ."'>" .$shift->shift_details_ID . "</a></td>"; ?>
                 <?php echo "<td>".$shift->customers_transported."</td>"; ?>
                 <?php echo "<td>".$shift->total_amount_earned."<td><a href='".base_url()."shifts/display_shift/".$shift->ID."' class='btn btn-xs btn-info' role='button'>Details</a></td></td>"; ?>
             </tr>

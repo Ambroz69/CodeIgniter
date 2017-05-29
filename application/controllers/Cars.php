@@ -30,7 +30,7 @@ class Cars extends CI_Controller {
     public function create_car() {
 
         $this->form_validation->set_rules('licence_plate', '"Licence Plate"', 'trim|required|exact_length[9]');
-        $this->form_validation->set_rules('mileage', '"Mileage"', 'trim|required|integer');
+        $this->form_validation->set_rules('mileage', '"Mileage"', 'trim|required|numeric');
         $this->form_validation->set_rules('vehicle_inspection_expiration', '"STK expiration date"', 'trim|required|exact_length[10]');
 
         if ($this->form_validation->run() == FALSE) {
@@ -57,7 +57,7 @@ class Cars extends CI_Controller {
     public function update_car($car_ID) {
 
         $this->form_validation->set_rules('licence_plate', '"Licence Plate"', 'trim|required|exact_length[9]');
-        $this->form_validation->set_rules('mileage', '"Mileage"', 'trim|required|integer');
+        $this->form_validation->set_rules('mileage', '"Mileage"', 'trim|required|numeric');
         $this->form_validation->set_rules('vehicle_inspection_expiration', '"STK expiration date"', 'trim|required|exact_length[10]');
 
         if ($this->form_validation->run() == FALSE) {

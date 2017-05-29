@@ -1,5 +1,5 @@
 
-<div class='col-xs-12 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
+<div class='col-xs-8 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
     <h2>Edit ride</h2>
     <?php $attributes = array('ID'=>'create_form', 'class'=> 'form_horizontal'); ?>
 
@@ -11,46 +11,55 @@
     <div class="form-group">
         <?php echo form_label('Taxi driver ID:'); ?>
 
-        <?php
-        $data = array(
-            'class' => 'form-control',
-            'name' => 'taxi_driver_ID',
-            'placeholder' => 'Enter Taxi driver ID (COMBOBOX incoming)',
-            'value' => $drive_data->taxi_driver_ID
-        );
-        ?>
-
-        <?php echo form_input($data); ?>
+        <select class="form-control" name="taxi_driver_ID">
+            <?php foreach($taxi_driver_ID as $row): ?>
+                <?php if ($row->ID == $drive_data->taxi_driver_ID): ?>
+                    <?php
+                    echo '<option selected value="'.$row->ID.'">'.$row->ID.'</option>';
+                    ?>
+                <?php else: ?>
+                    <?php
+                    echo '<option value="'.$row->ID.'">'.$row->ID.'</option>';
+                    ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </select>
     </div>
 
     <div class="form-group">
         <?php echo form_label('Car ID:'); ?>
 
-        <?php
-        $data = array(
-            'class' => 'form-control',
-            'name' => 'car_ID',
-            'placeholder' => 'Enter Car ID (COMBOBOX incoming)',
-            'value' => $drive_data->car_ID
-        );
-        ?>
-
-        <?php echo form_input($data); ?>
+        <select class="form-control" name="car_ID">
+            <?php foreach($car_ID as $row): ?>
+                <?php if ($row->ID == $drive_data->car_ID): ?>
+                    <?php
+                    echo '<option selected value="'.$row->ID.'">'.$row->ID.'</option>';
+                    ?>
+                <?php else: ?>
+                    <?php
+                    echo '<option value="'.$row->ID.'">'.$row->ID.'</option>';
+                    ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </select>
     </div>
 
     <div class="form-group">
         <?php echo form_label('Shift ID:'); ?>
 
-        <?php
-        $data = array(
-            'class' => 'form-control',
-            'name' => 'shift_ID',
-            'placeholder' => 'Enter shift ID (COMBOBOX incoming)',
-            'value' => $drive_data->shift_ID
-        );
-        ?>
-
-        <?php echo form_input($data); ?>
+        <select class="form-control" name="shift_ID">
+            <?php foreach($shift_ID as $row): ?>
+                <?php if ($row->ID == $drive_data->shift_ID): ?>
+                    <?php
+                    echo '<option selected value="'.$row->ID.'">'.$row->ID.'</option>';
+                    ?>
+                <?php else: ?>
+                    <?php
+                    echo '<option value="'.$row->ID.'">'.$row->ID.'</option>';
+                    ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </select>
     </div>
 
     <div class="form-group">
@@ -128,7 +137,7 @@
         <?php echo form_input($data); ?>
     </div>
 
-    <div class="form-group">
+    <div class="form-group pull-right">
 
         <?php
         $data = array(
@@ -141,5 +150,13 @@
         <?php echo form_submit($data); ?>
     </div>
 
+    <div class="form-group pull-left">
+        <a class="btn btn-danger" href='<?php echo base_url(); ?>drives/index_drive'>Cancel</a>
+    </div>
+
     <?php echo form_close(); ?>
+</div>
+
+<div class="col-xs-4">
+
 </div>

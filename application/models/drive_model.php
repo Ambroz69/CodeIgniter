@@ -48,6 +48,12 @@ class Drive_model extends CI_Model {
         return true;
     }
 
+    public function get_details_ID($table_name) {
+
+        $query = $this->db->query('SELECT ID FROM '.$table_name);
+
+        return $query->result();
+    }
 }
 
 

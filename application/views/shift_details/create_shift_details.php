@@ -1,5 +1,5 @@
 
-<div class='col-xs-12 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
+<div class='col-xs-8 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
     <h2>Adding new shift details.</h2>
     <?php $attributes = array('ID'=>'create_form', 'class'=> 'form_horizontal'); ?>
 
@@ -29,7 +29,8 @@
         $data = array(
             'class' => 'form-control',
             'name' => 'shift_start',
-            'placeholder' => 'Enter shift start time (example: 08:45:00)'
+            'type' => 'time'
+            //'placeholder' => 'Enter shift start time (example: 08:45:00)'
         );
         ?>
 
@@ -43,7 +44,8 @@
         $data = array(
             'class' => 'form-control',
             'name' => 'shift_end',
-            'placeholder' => 'Enter shift start time (example: 16:30:00)'
+            'type' => 'time'
+            //'placeholder' => 'Enter shift start time (example: 16:30:00)'
         );
         ?>
 
@@ -65,7 +67,7 @@
     </div>
 
 
-    <div class="form-group">
+    <div class="form-group pull-right">
 
         <?php
         $data = array(
@@ -78,5 +80,13 @@
         <?php echo form_submit($data); ?>
     </div>
 
+    <div class="form-group pull-left">
+        <a class="btn btn-danger" href='<?php echo base_url(); ?>shift_details/index_shift_details'>Cancel</a>
+    </div>
+
     <?php echo form_close(); ?>
+</div>
+
+<div class="col-xs-4">
+
 </div>

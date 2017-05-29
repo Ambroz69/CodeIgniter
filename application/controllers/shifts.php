@@ -29,12 +29,14 @@ class Shifts extends CI_Controller {
 
     public function create_shift() {
 
-        $this->form_validation->set_rules('shift_details_ID', '"Shift details ID"', 'trim|required|integer');
+
+        //$this->form_validation->set_rules('shift_details_ID', '"Shift details ID"', 'trim|required|integer');
         $this->form_validation->set_rules('customers_transported', '"Customers transported"', 'trim|required|integer');
         $this->form_validation->set_rules('total_amount_earned', '"Total amount earned"', 'trim|required|numeric');
 
         if ($this->form_validation->run() == FALSE) {
 
+            $data['shift_details_ID'] = $this->shift_model->get_shift_details_ID();
             $data['main_view'] = 'shifts/create_shift';
             $this->load->view('layouts/main', $data);
 
@@ -56,12 +58,13 @@ class Shifts extends CI_Controller {
 
     public function update_shift($shift_ID) {
 
-        $this->form_validation->set_rules('shift_details_ID', '"Shift details ID"', 'trim|required|integer');
+        //$this->form_validation->set_rules('shift_details_ID', '"Shift details ID"', 'trim|required|integer');
         $this->form_validation->set_rules('customers_transported', '"Customers transported"', 'trim|required|integer');
         $this->form_validation->set_rules('total_amount_earned', '"Total amount earned"', 'trim|required|numeric');
 
         if ($this->form_validation->run() == FALSE) {
 
+            $data['shift_details_ID'] = $this->shift_model->get_shift_details_ID();
             $data['shift_data'] = $this->shift_model->get_shift_info($shift_ID);
             $data['main_view'] = 'shifts/edit_shift';
             $this->load->view('layouts/main', $data);
@@ -88,6 +91,8 @@ class Shifts extends CI_Controller {
         $this->session->set_flashdata('shift_deleted','Shift deleted succesfully.');
         redirect('shifts/index_shift');
     }
+
+
 }
 
 ?>

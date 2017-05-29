@@ -1,5 +1,5 @@
 
-<div class='col-xs-12 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
+<div class='col-xs-8 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
     <h2>Adding new shift</h2>
     <?php $attributes = array('ID'=>'create_form', 'class'=> 'form_horizontal'); ?>
 
@@ -11,15 +11,13 @@
     <div class="form-group">
         <?php echo form_label('Shift details ID:'); ?>
 
-        <?php
-        $data = array(
-            'class' => 'form-control',
-            'name' => 'shift_details_ID',
-            'placeholder' => 'Enter Shift details ID (COMBOBOX incoming)'
-        );
-        ?>
-
-        <?php echo form_input($data); ?>
+        <select class="form-control" name="shift_details_ID">
+            <?php
+            foreach($shift_details_ID as $row) {
+                echo '<option value="'.$row->ID.'">'.$row->ID.'</option>';
+            }
+            ?>
+        </select>
     </div>
 
     <div class="form-group">
@@ -51,7 +49,7 @@
     </div>
 
 
-    <div class="form-group">
+    <div class="form-group pull-right">
 
         <?php
         $data = array(
@@ -64,5 +62,13 @@
         <?php echo form_submit($data); ?>
     </div>
 
+    <div class="form-group pull-left">
+        <a class="btn btn-danger" href='<?php echo base_url(); ?>shifts/index_shift'>Cancel</a>
+    </div>
+
     <?php echo form_close(); ?>
+</div>
+
+<div class="col-xs-4">
+
 </div>

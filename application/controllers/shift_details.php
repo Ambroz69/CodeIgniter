@@ -30,8 +30,8 @@ class Shift_details extends CI_Controller {
     public function create_shift_details() {
 
         $this->form_validation->set_rules('type', '"Type"', 'trim|required');
-        $this->form_validation->set_rules('shift_start', '"Shift start time"', 'trim|required|exact_length[8]');
-        $this->form_validation->set_rules('shift_end', '"Shift end time"', 'trim|required|exact_length[8]');
+        //$this->form_validation->set_rules('shift_start', '"Shift start time"', 'trim|required|exact_length[8]');
+        //$this->form_validation->set_rules('shift_end', '"Shift end time"', 'trim|required|exact_length[8]');
         $this->form_validation->set_rules('hourly_wage', '"Hourly wage"', 'trim|required|numeric');
 
         if ($this->form_validation->run() == FALSE) {
@@ -59,8 +59,8 @@ class Shift_details extends CI_Controller {
     public function update_shift_details($shift_details_ID) {
 
         $this->form_validation->set_rules('type', '"Type"', 'trim|required');
-        $this->form_validation->set_rules('shift_start', '"Shift start time"', 'trim|required|exact_length[8]');
-        $this->form_validation->set_rules('shift_end', '"Shift end time"', 'trim|required|exact_length[8]');
+        //$this->form_validation->set_rules('shift_start', '"Shift start time"', 'trim|required|exact_length[8]');
+        //$this->form_validation->set_rules('shift_end', '"Shift end time"', 'trim|required|exact_length[8]');
         $this->form_validation->set_rules('hourly_wage', '"Hourly wage"', 'trim|required|numeric');
 
         if ($this->form_validation->run() == FALSE) {

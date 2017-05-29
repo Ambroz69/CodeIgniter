@@ -1,5 +1,5 @@
 
-<div class='col-xs-12 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
+<div class='col-xs-8 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
     <h2>Adding new taxi driver.</h2>
     <?php $attributes = array('ID'=>'create_form', 'class'=> 'form_horizontal'); ?>
 
@@ -71,7 +71,8 @@
         $data = array(
             'class' => 'form-control',
             'name' => 'hired_date',
-            'placeholder' => 'Enter hired date (example: 2015-05-14)'
+            'type' => 'date'
+            //'placeholder' => 'Enter hired date (example: 2015-05-14)'
         );
         ?>
 
@@ -79,13 +80,14 @@
     </div>
 
     <div class="form-group">
-        <?php echo form_label('Date of last day in work (if no longer working):'); ?>
+        <?php echo form_label('Date of last day in work (leave empty if working):'); ?>
 
         <?php
         $data = array(
             'class' => 'form-control',
             'name' => 'fired_date',
-            'placeholder' => 'Enter fired date (example: 2015-07-17) - leave empty if still working'
+            'type' => 'date'
+            //'placeholder' => 'Enter fired date (example: 2015-07-17) - leave empty if still working'
         );
         ?>
 
@@ -134,7 +136,7 @@
         <?php echo form_input($data); ?>
     </div>
 
-    <div class="form-group">
+    <div class="form-group pull-right">
 
         <?php
         $data = array(
@@ -147,5 +149,13 @@
         <?php echo form_submit($data); ?>
     </div>
 
+    <div class="form-group pull-left">
+        <a class="btn btn-danger" href='<?php echo base_url(); ?>taxi_drivers/index_taxi_driver'>Cancel</a>
+    </div>
+
     <?php echo form_close(); ?>
+</div>
+
+<div class="col-xs-4">
+
 </div>

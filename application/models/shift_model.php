@@ -48,6 +48,13 @@ class Shift_model extends CI_Model {
         return true;
     }
 
+    public function get_shift_details_ID() {
+
+        $query = $this->db->query('SELECT ID FROM shift_details');
+
+        return $query->result();
+    }
+
 }
 
 
