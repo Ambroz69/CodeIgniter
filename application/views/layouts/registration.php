@@ -29,7 +29,9 @@
                 <li><a href="<?php echo base_url(); ?>">Home <span class="sr-only">(current)</span></a></li>
                 <li><a href="<?php echo base_url(); ?>users/register">Register <span class="sr-only">(current)</span></a></li>
                 <li><a href="<?php echo base_url(); ?>taxi_drivers/index_taxi_driver">Taxi Drivers <span class="sr-only">(current)</span></a></li>
+                <li><a href="<?php echo base_url(); ?>shifts/index_shift">Shifts <span class="sr-only">(current)</span></a></li>
                 <li><a href="<?php echo base_url(); ?>shift_details/index_shift_details">Shift details <span class="sr-only">(current)</span></a></li>
+                <li><a href="<?php echo base_url(); ?>drives/index_drive">Rides <span class="sr-only">(current)</span></a></li>
             </ul>
 
             <?php if($this->session->userdata('logged_in')): ?>

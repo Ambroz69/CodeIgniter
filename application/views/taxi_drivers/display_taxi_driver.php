@@ -20,6 +20,6 @@
         <h4 class="text-center">Taxi driver management</h4>
         <td><a href='' class='btn btn-sm btn-block btn-success' role='button'>Add ride</a></td>
         <td><a href='<?php echo base_url();?>taxi_drivers/update_taxi_driver/<?php echo $taxi_driver_data->ID; ?>' class='btn btn-sm btn-block btn-warning' role='button'>Edit driver</a></td>
-        <td><a href='<?php echo base_url();?>taxi_drivers/delete_taxi_driver/<?php echo $taxi_driver_data->ID; ?>' class='btn btn-sm btn-block btn-danger' role='button'>Delete river</a></td>
+        <td><a href='<?php echo base_url();?>taxi_drivers/delete_taxi_driver/<?php echo $taxi_driver_data->ID; ?>' class='btn btn-sm btn-block btn-danger' role='button'>Delete driver</a></td>
     </ul>
 </div>
