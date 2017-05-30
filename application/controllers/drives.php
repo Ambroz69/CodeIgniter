@@ -35,7 +35,7 @@ class Drives extends CI_Controller {
         $this->form_validation->set_rules('from_address', '"Address of starting location"', 'trim|required|min_length[2]|max_length[45]');
         $this->form_validation->set_rules('to_address', '"Address of destination"', 'trim|required|min_length[2]|max_length[45]');
         $this->form_validation->set_rules('distance', '"Distance travelled"', 'trim|required|numeric');
-        $this->form_validation->set_rules('price_per_km', '"Price per kilometer"', 'trim|required|numeric');
+        //$this->form_validation->set_rules('start_time', '"Start time"', 'trim|required|numeric');
         $this->form_validation->set_rules('amount_earned', '"Earned money"', 'trim|required|numeric');
 
         if ($this->form_validation->run() == FALSE) {
@@ -56,7 +56,7 @@ class Drives extends CI_Controller {
                 'from_address' => $this->input->post('from_address'),
                 'to_address' => $this->input->post('to_address'),
                 'distance' => $this->input->post('distance'),
-                'price_per_km' => $this->input->post('price_per_km'),
+                'start_time' => $this->input->post('start_time'),
                 'amount_earned' => $this->input->post('amount_earned')
             );
 
@@ -76,7 +76,7 @@ class Drives extends CI_Controller {
         $this->form_validation->set_rules('from_address', '"Address of starting location"', 'trim|required|min_length[2]|max_length[45]');
         $this->form_validation->set_rules('to_address', '"Address of destination"', 'trim|required|min_length[2]|max_length[45]');
         $this->form_validation->set_rules('distance', '"Distance travelled"', 'trim|required|numeric');
-        $this->form_validation->set_rules('price_per_km', '"Price per kilometer"', 'trim|required|numeric');
+        //$this->form_validation->set_rules('start_time', '"Start_time"', 'trim|required');
         $this->form_validation->set_rules('amount_earned', '"Earned money"', 'trim|required|numeric');
 
         if ($this->form_validation->run() == FALSE) {
@@ -99,7 +99,7 @@ class Drives extends CI_Controller {
                 'from_address' => $this->input->post('from_address'),
                 'to_address' => $this->input->post('to_address'),
                 'distance' => $this->input->post('distance'),
-                'price_per_km' => $this->input->post('price_per_km'),
+                'start_time' => $this->input->post('start_time'),
                 'amount_earned' => $this->input->post('amount_earned')
             );
 

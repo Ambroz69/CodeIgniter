@@ -1,6 +1,6 @@
 
 <div class='col-xs-8 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
-    <h2>Edit shift.</h2>
+    <h2>Edit shift</h2>
     <?php $attributes = array('ID'=>'create_form', 'class'=> 'form_horizontal'); ?>
 
     <?php echo validation_errors("<p class='bg-danger'>"); ?>
@@ -27,14 +27,15 @@
     </div>
 
     <div class="form-group">
-        <?php echo form_label('Customers transported:'); ?>
+        <?php echo form_label('Start date:'); ?>
 
         <?php
         $data = array(
             'class' => 'form-control',
-            'name' => 'customers_transported',
-            'placeholder' => 'Enter amount of customers transported during the shift',
-            'value' => $shift_data->customers_transported
+            'name' => 'start_date',
+            'type' => 'date',
+            //'placeholder' => 'Enter amount of customers transported during the shift',
+            'value' => $shift_data->start_date
         );
         ?>
 
@@ -42,14 +43,15 @@
     </div>
 
     <div class="form-group">
-        <?php echo form_label('Total amount earned:'); ?>
+        <?php echo form_label('End date:'); ?>
 
         <?php
         $data = array(
             'class' => 'form-control',
-            'name' => 'total_amount_earned',
-            'placeholder' => 'Enter total money earned during the shift',
-            'value' => $shift_data->total_amount_earned
+            'name' => 'end_date',
+            'type' => 'date',
+            //'placeholder' => 'Enter total money earned during the shift',
+            'value' => $shift_data->end_date
         );
         ?>
 
@@ -71,7 +73,7 @@
     </div>
 
     <div class="form-group pull-left">
-        <a class="btn btn-danger" href='<?php echo base_url(); ?>shifts/index_shift'>Cancel</a>
+        <a class="btn btn-danger" href="javascript:history.back(1)">Cancel</a>
     </div>
 
     <?php echo form_close(); ?>

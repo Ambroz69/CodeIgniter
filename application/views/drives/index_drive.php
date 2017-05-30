@@ -44,7 +44,7 @@
                 Distance
             </th>
             <th>
-                Price per km
+                Start time
             </th>
             <th>
                 Cash earned
@@ -61,7 +61,7 @@
                 <?php echo "<td>".$drive->from_address."</td>"; ?>
                 <?php echo "<td>".$drive->to_address."</a></td>"; ?>
                 <?php echo "<td>".$drive->distance."</td>"; ?>
-                <?php echo "<td>".$drive->price_per_km."</td>"; ?>
+                <?php echo "<td>".$drive->start_time."</td>"; ?>
                 <?php echo "<td>".$drive->amount_earned."<td><a href='".base_url()."drives/display_drive/".$drive->ID."' class='btn btn-xs btn-info' role='button'>Details</a></td></td>"; ?>
             </tr>
 

@@ -1,6 +1,6 @@
 
 <div class='col-xs-8 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
-    <h2>Edit car.</h2>
+    <h2>Edit car</h2>
     <?php $attributes = array('ID'=>'create_form', 'class'=> 'form_horizontal'); ?>
 
     <?php echo validation_errors("<p class='bg-danger'>"); ?>
@@ -68,7 +68,7 @@
     </div>
 
     <div class="form-group pull-right pull-left">
-        <a class="btn btn-danger" href='<?php echo base_url(); ?>cars/index'>Cancel</a>
+        <a class="btn btn-danger" href="javascript:history.back(1)">Cancel</a>
     </div>
 
     <?php echo form_close(); ?>

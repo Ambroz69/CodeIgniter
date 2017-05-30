@@ -21,13 +21,14 @@
     </div>
 
     <div class="form-group">
-        <?php echo form_label('Customers transported:'); ?>
+        <?php echo form_label('Start date:'); ?>
 
         <?php
         $data = array(
             'class' => 'form-control',
-            'name' => 'customers_transported',
-            'placeholder' => 'Enter amount of customers transported during the shift'
+            'name' => 'start_date',
+            'type' => 'date'
+            //'placeholder' => 'Enter start date of shift'
         );
         ?>
 
@@ -35,13 +36,14 @@
     </div>
 
     <div class="form-group">
-        <?php echo form_label('Total amount earned:'); ?>
+        <?php echo form_label('End date:'); ?>
 
         <?php
         $data = array(
             'class' => 'form-control',
-            'name' => 'total_amount_earned',
-            'placeholder' => 'Enter total money earned during the shift'
+            'name' => 'end_date',
+            'type' => 'date'
+            //'placeholder' => 'Enter end date of shift'
         );
         ?>
 

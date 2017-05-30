@@ -30,9 +30,9 @@ class Shifts extends CI_Controller {
     public function create_shift() {
 
 
-        //$this->form_validation->set_rules('shift_details_ID', '"Shift details ID"', 'trim|required|integer');
-        $this->form_validation->set_rules('customers_transported', '"Customers transported"', 'trim|required|integer');
-        $this->form_validation->set_rules('total_amount_earned', '"Total amount earned"', 'trim|required|numeric');
+        $this->form_validation->set_rules('shift_details_ID', '"Shift details ID"', 'trim|required|integer');
+        //$this->form_validation->set_rules('start_date', '"Start date"', 'trim|required|integer');
+        //$this->form_validation->set_rules('end_date', '"End date"', 'trim|required|numeric');
 
         if ($this->form_validation->run() == FALSE) {
 
@@ -44,8 +44,8 @@ class Shifts extends CI_Controller {
 
             $data = array(
                 'shift_details_ID' => $this->input->post('shift_details_ID'),
-                'customers_transported' => $this->input->post('customers_transported'),
-                'total_amount_earned' => $this->input->post('total_amount_earned')
+                'start_date' => $this->input->post('start_date'),
+                'end_date' => $this->input->post('end_date')
             );
 
             if ($this->shift_model->create_shift($data)) {
@@ -58,9 +58,9 @@ class Shifts extends CI_Controller {
 
     public function update_shift($shift_ID) {
 
-        //$this->form_validation->set_rules('shift_details_ID', '"Shift details ID"', 'trim|required|integer');
-        $this->form_validation->set_rules('customers_transported', '"Customers transported"', 'trim|required|integer');
-        $this->form_validation->set_rules('total_amount_earned', '"Total amount earned"', 'trim|required|numeric');
+        $this->form_validation->set_rules('shift_details_ID', '"Shift details ID"', 'trim|required|integer');
+        //$this->form_validation->set_rules('start_date', '"Start date"', 'trim|required|integer');
+        //$this->form_validation->set_rules('end_date', '"End date"', 'trim|required|numeric');
 
         if ($this->form_validation->run() == FALSE) {
 
@@ -73,8 +73,8 @@ class Shifts extends CI_Controller {
 
             $data = array(
                 'shift_details_ID' => $this->input->post('shift_details_ID'),
-                'customers_transported' => $this->input->post('customers_transported'),
-                'total_amount_earned' => $this->input->post('total_amount_earned')
+                'start_date' => $this->input->post('start_date'),
+                'end_date' => $this->input->post('end_date')
             );
 
             if ($this->shift_model->update_shift($shift_ID, $data)) {

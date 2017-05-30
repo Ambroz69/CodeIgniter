@@ -108,14 +108,15 @@
     </div>
 
     <div class="form-group">
-        <?php echo form_label('Price per kilometer:'); ?>
+        <?php echo form_label('Start time:'); ?>
 
         <?php
         $data = array(
             'class' => 'form-control',
-            'name' => 'price_per_km',
-            'placeholder' => 'Enter price per kilometer',
-            'value' => $drive_data->price_per_km
+            'name' => 'start_time',
+            'type' => 'time',
+            //'placeholder' => 'Enter start time',
+            'value' => $drive_data->start_time
         );
         ?>
 
@@ -151,7 +152,7 @@
     </div>
 
     <div class="form-group pull-left">
-        <a class="btn btn-danger" href='<?php echo base_url(); ?>drives/index_drive'>Cancel</a>
+        <a class="btn btn-danger" href="javascript:history.back(1)">Cancel</a>
     </div>
 
     <?php echo form_close(); ?>

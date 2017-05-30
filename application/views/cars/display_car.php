@@ -15,6 +15,6 @@
         <h4 class="text-center" align="center">Car management</h4>
   <!--      <td><a href='' class='btn btn-sm btn-block btn-success' role='button'><b>Add ride</b></a></td> !=-->
         <td><a href='<?php echo base_url();?>cars/update_car/<?php echo $car_data->ID; ?>' class='btn btn-sm btn-block btn-warning' role='button'><b>Edit car</b></a></td>
-        <td><a href='<?php echo base_url();?>cars/delete_car/<?php echo $car_data->ID; ?>' class='btn btn-sm btn-block btn-danger' role='button'><b>Delete car</b></a></td>
+        <td><a href='<?php echo base_url();?>cars/delete_car/<?php echo $car_data->ID; ?>' onclick="return confirm('Delete car #<?php echo $car_data->ID; ?>?')" class='btn btn-sm btn-block btn-danger' role='button'><b>Delete car</b></a></td>
     </ul>
 </div>

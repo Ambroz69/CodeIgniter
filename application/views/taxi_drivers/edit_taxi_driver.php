@@ -1,6 +1,6 @@
 
 <div class='col-xs-8 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
-    <h2>Edit taxi driver.</h2>
+    <h2>Edit taxi driver</h2>
     <?php $attributes = array('ID'=>'create_form', 'class'=> 'form_horizontal'); ?>
 
     <?php echo validation_errors("<p class='bg-danger'>"); ?>
@@ -122,7 +122,8 @@
         $data = array(
             'class' => 'form-control',
             'name' => 'driving_licence_expiration',
-            'placeholder' => 'Enter date of expiration (example: 2024-01-15)',
+            'type' => 'date',
+            //'placeholder' => 'Enter date of expiration (example: 2024-01-15)',
             'value' => $taxi_driver_data->driving_licence_expiration
         );
         ?>
@@ -160,7 +161,7 @@
     </div>
 
     <div class="form-group pull-left">
-        <a class="btn btn-danger" href='<?php echo base_url(); ?>taxi_drivers/index_taxi_driver'>Cancel</a>
+        <a class="btn btn-danger" href="javascript:history.back(1)">Cancel</a>
     </div>
 
     <?php echo form_close(); ?>

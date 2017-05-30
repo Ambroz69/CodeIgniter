@@ -93,6 +93,20 @@
     </div>
 
     <div class="form-group">
+        <?php echo form_label('Registration key:'); ?>
+
+        <?php
+        $data = array(
+            'class' => 'form-control',
+            'name' => 'registration_key',
+            'placeholder' => 'Enter registration key from your employer'
+        );
+        ?>
+
+        <?php echo form_input($data); ?>
+    </div>
+
+    <div class="form-group">
 
         <?php
         $data = array(

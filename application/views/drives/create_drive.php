@@ -87,13 +87,14 @@
     </div>
 
     <div class="form-group">
-        <?php echo form_label('Price per kilometer:'); ?>
+        <?php echo form_label('Start time:'); ?>
 
         <?php
         $data = array(
             'class' => 'form-control',
-            'name' => 'price_per_km',
-            'placeholder' => 'Enter price per kilometer'
+            'name' => 'start_time',
+            'type' => 'time'
+            //'placeholder' => 'Enter start_time'
         );
         ?>
 

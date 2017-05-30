@@ -1,6 +1,6 @@
 
 <div class='col-xs-8 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
-    <h2>Edit shift details.</h2>
+    <h2>Edit shift details</h2>
     <?php $attributes = array('ID'=>'create_form', 'class'=> 'form_horizontal'); ?>
 
     <?php echo validation_errors("<p class='bg-danger'>"); ?>
@@ -85,7 +85,7 @@
     </div>
 
     <div class="form-group pull-left">
-        <a class="btn btn-danger" href='<?php echo base_url(); ?>shift_details/index_shift_details'>Cancel</a>
+        <a class="btn btn-danger" href="javascript:history.back(1)">Cancel</a>
     </div>
 
     <?php echo form_close(); ?>

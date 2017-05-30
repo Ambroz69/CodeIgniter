@@ -1,6 +1,6 @@
 
 <div class='col-xs-8 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
-    <h2>Adding new shift details.</h2>
+    <h2>Adding new shift details</h2>
     <?php $attributes = array('ID'=>'create_form', 'class'=> 'form_horizontal'); ?>
 
     <?php echo validation_errors("<p class='bg-danger'>"); ?>

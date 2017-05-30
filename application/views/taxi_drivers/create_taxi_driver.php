@@ -1,6 +1,6 @@
 
 <div class='col-xs-8 container-fluid bg-info img-rounded' style="border:3px groove cornflowerblue">
-    <h2>Adding new taxi driver.</h2>
+    <h2>Adding new taxi driver</h2>
     <?php $attributes = array('ID'=>'create_form', 'class'=> 'form_horizontal'); ?>
 
     <?php echo validation_errors("<p class='bg-danger'>"); ?>
@@ -115,7 +115,8 @@
         $data = array(
             'class' => 'form-control',
             'name' => 'driving_licence_expiration',
-            'placeholder' => 'Enter date of expiration (example: 2024-01-15)'
+            'type' => 'date'
+            //'placeholder' => 'Enter date of expiration (example: 2024-01-15)'
         );
         ?>
 
