@@ -52,13 +52,25 @@
                     dataType: "json",
                     async: false
                 }).responseText;
+                var jsonData3 = $.ajax({
+                    url: "<?php echo base_url().'charts/getdata3' ?>",
+                    dataType: "json",
+                    async: false
+                }).responseText;
+                var jsonData4 = $.ajax({
+                    url: "<?php echo base_url().'charts/getdata4' ?>",
+                    dataType: "json",
+                    async: false
+                }).responseText;
 
                 var data1 = new google.visualization.DataTable(jsonData1);
                 var data2 = new google.visualization.DataTable(jsonData2);
+                var data3 = new google.visualization.DataTable(jsonData3);
+                var data4 = new google.visualization.DataTable(jsonData4);
 
                 var options1 = {
                     'title':'Taxi drivers and their total count of rides',
-                    'width':300,
+                    'width':400,
                     'height':300,
                     'chartArea': {'width': '100%', 'height': '80%'},
                     'legend': {'position': 'bottom'}
@@ -70,12 +82,32 @@
                     'chartArea': {'width': '60%', 'height': '80%'},
                     'legend': {'position': 'bottom'}
                 };
+                var options3 = {
+                    'title':'Profit split amongst shifts',
+                    'width':400,
+                    'height':300,
+                    'chartArea': {'width': '100%', 'height': '80%'},
+                    'legend': {'position': 'bottom'}
+                };
+                var options4 = {
+                    'title':'Rating of taxi drivers',
+                    'width':400,
+                    'height':300,
+                    'chartArea': {'width': '60%', 'height': '80%'},
+                    'legend': {'position': 'bottom'}
+                };
 
                 var chart1 = new google.visualization.PieChart(document.getElementById('chart_div1'));
                 chart1.draw(data1, options1);
 
                 var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
                 chart2.draw(data2, options2);
+
+                var chart3 = new google.visualization.PieChart(document.getElementById('chart_div3'));
+                chart3.draw(data3, options3);
+
+                var chart4 = new google.visualization.BarChart(document.getElementById('chart_div4'));
+                chart4.draw(data4, options4);
             }
 
         </script>
@@ -84,18 +116,33 @@
 
     <body>
 
-        <div class="col-xs-4">
-            <div id="chart_div1" class="container-fluid img-rounded" style="border:3px groove cornflowerblue"></div>
+    <div class="col-xs-1">
+
+    </div>
+        <div class="col-xs-5">
+            <p>
+                <div id="chart_div1" class="container-fluid img-rounded" style="border:3px groove cornflowerblue"></div>
+            </p>
+
+            <p>
+            <div id="chart_div3" class="container-fluid img-rounded" style="border:3px groove cornflowerblue"></div>
+            </p>
         </div>
 
-        <div class="col-xs-3">
 
-        </div>
 
         <div class="col-xs-5 pull-right">
+            <p>
             <div id="chart_div2" class="container-fluid img-rounded" style="border:3px groove cornflowerblue"></div>
-        </div>
+            </p>
 
+            <p>
+            <div id="chart_div4" class="container-fluid img-rounded" style="border:3px groove cornflowerblue"></div>
+            </p>
+        </div>
+    <div class="col-xs-1">
+
+    </div>
 
 
     </body>

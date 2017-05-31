@@ -24,14 +24,14 @@ class Charts extends CI_Controller {
         $data = $this->chart_model->get_data('SELECT last_name, count(last_name) AS pocet_jazd FROM drive JOIN taxi_driver
                                               ON taxi_driver_ID=taxi_driver.ID GROUP BY last_name');
 
-        $responce->cols[] = array(
+        $response->cols[] = array(
             "id" => "",
             "label" => "Name",
             "pattern" => "",
             "type" => "string"
         );
 
-        $responce->cols[] = array(
+        $response->cols[] = array(
             "id" => "",
             "label" => "Rides",
             "pattern" => "",
@@ -39,7 +39,7 @@ class Charts extends CI_Controller {
         );
 
         foreach($data as $cd) {
-            $responce->rows[]["c"] = array(
+            $response->rows[]["c"] = array(
                 array(
                     "v" => "$cd->last_name",
                     "f" => null
@@ -51,7 +51,7 @@ class Charts extends CI_Controller {
             );
         }
 
-        echo json_encode($responce);
+        echo json_encode($response);
     }
 
     public function getdata2() {
@@ -59,14 +59,14 @@ class Charts extends CI_Controller {
         $data = $this->chart_model->get_data('SELECT licence_plate, ROUND(SUM(distance),1) AS najazdene_km 
                                               FROM drive JOIN car ON car_ID=car.ID GROUP BY licence_plate');
 
-        $responce->cols[] = array(
+        $response->cols[] = array(
             "id" => "",
             "label" => "Licence_plate",
             "pattern" => "",
             "type" => "string"
         );
 
-        $responce->cols[] = array(
+        $response->cols[] = array(
             "id" => "",
             "label" => "Distance",
             "pattern" => "",
@@ -74,7 +74,7 @@ class Charts extends CI_Controller {
         );
 
         foreach($data as $cd) {
-            $responce->rows[]["c"] = array(
+            $response->rows[]["c"] = array(
                 array(
                     "v" => "$cd->licence_plate",
                     "f" => null
@@ -86,7 +86,77 @@ class Charts extends CI_Controller {
             );
         }
 
-        echo json_encode($responce);
+        echo json_encode($response);
+    }
+
+    public function getdata3() {
+
+        $data = $this->chart_model->get_data('SELECT type,ROUND(SUM(amount_earned),1) AS zarobok FROM drive
+                                              JOIN shift ON drive.shift_ID=shift.ID JOIN shift_details ON
+                                              shift.shift_details_ID=shift_details.ID GROUP BY type');
+
+        $response->cols[] = array(
+            "id" => "",
+            "label" => "Shift type",
+            "pattern" => "",
+            "type" => "string"
+        );
+
+        $response->cols[] = array(
+            "id" => "",
+            "label" => "Profit",
+            "pattern" => "",
+            "type" => "number"
+        );
+
+        foreach($data as $cd) {
+            $response->rows[]["c"] = array(
+                array(
+                    "v" => "$cd->type",
+                    "f" => null
+                ) ,
+                array(
+                    "v" => (float)$cd->zarobok,
+                    "f" => null
+                )
+            );
+        }
+
+        echo json_encode($response);
+    }
+
+    public function getdata4() {
+
+        $data = $this->chart_model->get_data('SELECT last_name,rating FROM taxi_driver');
+
+        $response->cols[] = array(
+            "id" => "",
+            "label" => "Name",
+            "pattern" => "",
+            "type" => "string"
+        );
+
+        $response->cols[] = array(
+            "id" => "",
+            "label" => "Rating",
+            "pattern" => "",
+            "type" => "number"
+        );
+
+        foreach($data as $cd) {
+            $response->rows[]["c"] = array(
+                array(
+                    "v" => "$cd->last_name",
+                    "f" => null
+                ) ,
+                array(
+                    "v" => (int)$cd->rating,
+                    "f" => null
+                )
+            );
+        }
+
+        echo json_encode($response);
     }
 
 }
